@@ -1,0 +1,45 @@
+@charset "UTF-8";
+main {
+  width: 500px;
+}
+main h1 {
+  color: #00f;
+}
+main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* 공통속성과 값은 mixin->@include */
+  background-image: url(); /* 개별속성값은 따로적기 */
+}
+main p {
+  color: #f00;
+}
+main p:hover {
+  color: #00f;
+}
+main .box {
+  background-color: #ff0;
+}
+main .box input:hover {
+  background-color: #aaa;
+}
+main .box input[type=text] {
+  border: 1px solid #00f;
+}
+main .box input + span {
+  background-color: #f00;
+}
+main .box span {
+  background-color: #222;
+  color: #fff;
+}
+main .box span:nth-child(3) {
+  border: 5px solid blue;
+}
+
+/*# sourceMappingURL=style1.css.map */
