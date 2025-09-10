@@ -1,0 +1,11 @@
+header {
+  background-color: aqua;
+}
+header h1 {
+  color: yellow;
+}
+header nav .gnb > li .lnb a {
+  color: yellow;
+}
+
+/*# sourceMappingURL=styles.basic2.css.map */
