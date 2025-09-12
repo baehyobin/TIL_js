@@ -1,0 +1,45 @@
+$slide_bg1:#ffffd4;
+$color-white:#fff;
+$color-black:#000;
+$weight-bold:700;
+$weight-semi:600;
+$weight-medium:500;
+$font-title:3rem;
+$font-sub:1.5rem;
+
+@mixin pc-w-h {
+    max-width : 1360px;
+    min-width: 320px;
+    height: 750px;
+    margin: 50px auto 0;
+    padding : 100px 80px 150px;
+    border-radius: 32px;
+
+}
+
+@mixin flex-row{
+    display: flex; flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin bg-cover{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@mixin btn-design {
+    display: inline-block;
+    width: 250px; line-height: 60px;
+    text-align: center;
+    border-radius: 40px;
+    font-weight: 600; font-size: 1.1rem;
+}
+
+@mixin pst-ab{
+    position: absolute;
+    left: 0;
+    top:0;
+    width: 100%; height: max-content;
+}

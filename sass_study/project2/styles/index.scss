@@ -1,0 +1,53 @@
+@use './common.scss' as *;
+//1360x750
+.slide_wrap {
+    .slide_container {
+        .slide {
+            @include pc-w-h;
+            position: relative;
+        }
+        .slide1 {
+            background-color: $slide_bg1;
+            background-image: url(./images/home_chun_yellow_250813.png);
+            @include bg-cover;
+            background-size: 800px auto;
+            background-position: 120% center;
+            .title_contents{
+                h1{
+                    font-size: $font-title; font-weight: $weight-bold;
+                    margin-bottom: 1px;
+                    line-height: 150%;
+                }
+                p{
+                    font-size: $font-sub; font-weight: $weight-semi;
+                    margin-top: 20px;
+                }
+            }
+            .bnr_link{
+                margin-top: 240px;
+                .edu_btn {
+                    @include btn-design;
+                    background-color: $color-black;
+                    color: $color-white;}
+                    .news_btn {
+                    @include btn-design;
+                    border: 1px solid $color-black;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+        .slide2 {}
+        .slide3 {}
+        .slide_page_btn {
+            @include pst-ab; top: auto; bottom: 50px; left: 60px;
+            .pagenation {
+                span {}
+            }
+            .btn_g {
+                
+                #prev {}
+                #next {}
+            }
+        }
+    }
+}
