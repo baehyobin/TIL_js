@@ -1,0 +1,91 @@
+body {
+  background-color: bisque;
+}
+body main {
+  width: 420px;
+  height: 660px;
+  margin: 50px auto;
+  background-color: #fff;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+}
+body main .top {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 15px;
+}
+body main .top .profile {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4px;
+}
+body main .top .profile .photo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: url(../images/profile_img.jpg);
+}
+body main .top .profile .name {
+  font-size: 0.9rem;
+}
+body main .top .more {
+  font-size: 0.9rem;
+  float: right;
+}
+body main .photo {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 460px;
+  background-image: url(../images/travel_img.jpg);
+}
+body main .container .menu {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  padding: 0 15px;
+}
+body main .container .menu .left {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
+}
+body main .container .menu .left a {
+  width: 24px;
+  height: 24px;
+}
+body main .container .menu .left a img {
+  width: 100%;
+  height: max-content;
+}
+body main .container .menu .scrap {
+  font-size: 0.9rem;
+}
+body main .container .contents {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 0 15px;
+}
+body main .container .contents .comments {
+  font-size: 0.875rem;
+  color: #aaa;
+}
+
+/*# sourceMappingURL=main.css.map */

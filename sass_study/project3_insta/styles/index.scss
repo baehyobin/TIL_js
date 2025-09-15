@@ -1,0 +1,41 @@
+@use './common.scss' as *;
+body {
+    background-color: bisque;
+    main{
+        width: 420px; height: 660px;
+        margin: 50px auto; background-color: #fff;
+        box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+        .top {
+            @include flex-row; justify-content: space-between; height: 50px; padding: 0 15px;
+            .profile {
+                @include flex-row; gap : 4px;
+                .photo {
+                    @include bg; @include icon20; border-radius: 50%;
+                    background-image: url(../images/profile_img.jpg);}
+                .name {font-size: $font-size-m;}
+            }
+            .more {
+                font-size: $font-size-m; float: right;}
+        }
+        .photo {
+            @include bg; height: 460px;
+            background-image: url(../images/travel_img.jpg);
+        }
+        .container {
+            .menu {
+                @include flex-row; justify-content:space-between; height: 40px; padding: 0 15px;
+                .left {
+                    @include flex-row; gap : 6px;
+                    a { @include icon24;
+                        img {@include img-w100;}
+                    }
+                }
+                .scrap {font-size: $font-size-m;}
+            }
+            .contents {
+                @include flex-col; align-items: flex-start; gap: 7px; padding: 0 15px;
+                .comments {font-size: $font-size-s; color: $color-gray;}
+            }
+        }
+    }
+}
