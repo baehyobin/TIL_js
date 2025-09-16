@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="다이어트 체중계로 적정몸무게를 체크">
+    <meta name="keywords" content="체중계, 다이어트, 다이어트 체중계">
+    <title>적정몸무게 체크 | 다이어트 체중계</title>
+    <link rel="stylesheet" href="./styles/diat_scale_reset.css">
+    <link rel="stylesheet" href="./styles/diat_scale.css">
+    <script src="./scripts/diet_scale.js" defer></script>
+</head>
+<body>
+    <div id="wrap">
+        <div id="scale">
+            <h1>Check your weight</h1>
+            <form action="#" method="get" id="weight_check">
+                <input type="text" name="user_height" id="user_height" placeholder="000">cm
+                <input type="text" name="user_weight" id="user_weight" placeholder="00">kg
+                <button type="button" id="weightBtn">계산하기</button>
+                <p class="result"><!-- 적정체중은 ?kg이며 ?kg 초과되셨습니다. --></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

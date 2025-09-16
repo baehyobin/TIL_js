@@ -1,0 +1,21 @@
+#wrap {
+    width: 800px; height: 900vh;
+    margin: 0 auto; padding: 100px 20px;
+    background-color: pink;
+}
+#wrap #scale {
+    width: 700px; height: 400px;
+    margin: 0 auto; padding-top: 150px; padding-left: 100px;
+    background-image: url(../images/background.jpg);
+    background-color: beige;
+}
+#wrap #scale h1 {}
+#wrap #scale #weight_check {}
+#wrap #scale #weight_check {}
+#wrap #scale #weight_check input {
+    display: flex; flex-flow: row nowrap;
+}
+#wrap #scale #weight_check #user_height {}
+#wrap #scale #weight_check #user_weight {}
+#wrap #scale #weight_check #weightBtn {}
+#wrap #scale #weight_check .result {}
