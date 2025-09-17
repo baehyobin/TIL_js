@@ -1,0 +1,187 @@
+//index scss
+@use './common.scss' as *;
+#wrap {
+    header {
+        height: 52px; padding: 0 80px;
+        @include flex-row; gap: 10px;
+        border:1px solid $color-gray-light-lv2;
+        border-left: 0; border-right: 0;
+    }
+    main {@include contents-w; height: 900vh;
+        .path {
+            font-size: $font-size-s;
+            @include flex-row;
+            gap: 5px;
+            margin: 26px 0;
+            *{color : $color-gray-medium;}
+            a {}
+        }
+        .container {
+            @include flex-row; align-items: flex-start; gap: 24px;
+            .overview_img {
+                @include flex-row; align-items:flex-start; gap:10px;
+                .thumnail { @include flex-col; gap:8px;
+                    a { @include thumnail; border-radius:5px; overflow:hidden;
+                        img {@include img100Percent;}
+                    }
+                }.overview {
+                    @include overview;
+                    img {@include img100Percent;}
+                }
+            }
+            .contents {
+                @include flex-col; align-items: flex-start; gap: 26px;
+                @include img100Percent;
+                .brand {
+                    a{
+                        font-size: $font-size-s; color: $color-gray-light-lv1;
+                    }
+                }
+                .product_info {
+                    @include flex-row; justify-content: space-between;
+                    @include img100Percent;
+                    h1 {font-size: $font-size-l;}
+                    .right_icon {
+                        @include flex-row; gap: 10px;
+                        .scrap {
+                            @include flex-col;
+                            .bookmark {
+                                fill: $color-gray-medium;
+                                @include icon24;
+                            }
+                            span {
+                                color: $color-gray-medium;
+                                font-size: $font-size-xs;
+                            }
+                        }
+                        .share {
+                            .share_icon {
+                                fill: $color-gray-medium;
+                                @include icon24;
+                            }
+                        }
+                    }
+                }
+                .review {
+                    @include flex-row;
+                    .score {
+                        .star{@include icon14; fill: $color-point;}
+                    }
+                    .number {color: $color-point;}
+                }
+                .price_wrap {
+                    .sale_original_price {
+                        position: relative;
+                        margin-bottom: 25px;
+                        .sale {color: $color-gray-dark;}
+                        .original {color: $color-gray-medium;}
+                        .price_info {
+                            .info_icon {
+                                fill: $color-gray-light-lv2;
+                                @include icon14;
+                            }
+                            .info {
+                                font-size: $font-size-s; color: $color-gray-dark; 
+                                position: absolute; left: 0; top: 20px;
+                                width: 300px; height: auto;
+                                border: 1px solid $color-gray-light-lv2;
+                                padding: 8px; background-color: $color-white;
+                            }
+                        }
+                    }
+                    .total_price {
+                        .price {font-size: $font-size-xl; font-weight: $font-weight-bold;}
+                        span {font-size: $font-size-l;}
+                        img {height: 15px; width: auto;}
+                    }
+                }
+                .benefit_ship {
+                    font-size: $font-size-s;
+                    @include grid-6-2;
+                    grid-template-columns: 45px 1fr; gap: 10px;
+                    grid-template-areas:
+                        'title1 cont1'
+                        'title2 cont2'
+                        '. cont3'
+                        '. cont4'
+                        '. cont5'
+                        '. cont6';
+                        dt {
+                            color: $color-gray-dark;;
+                            &:nth-of-type(1) {grid-area:title1;}
+                            &:nth-of-type(2) {grid-area:title2;}
+                        }
+                        dd {
+                            em{font-weight: $font-weight-bold;}
+                            &.ship_info {}
+                            &:nth-of-type(1) {grid-area:cont1;}
+                            &:nth-of-type(2) {grid-area:cont2;}
+                            &:nth-of-type(3) {grid-area:cont3;}
+                            &:nth-of-type(4) {grid-area:cont4;}
+                            &:nth-of-type(5) {grid-area:cont5;}
+                            &:nth-of-type(6) {grid-area:cont6; background-color: $color-gray-light-lv3;}
+                        }
+                }
+                #orderFrm {
+                    width: 100%; 
+                    .product_opt {
+                        @include flex-col; gap: 10px;
+                        select {
+                            appearance: none; background-image: url(../images/arrow_drop_down.png);
+                            background-repeat: no-repeat;
+                            background-position: right;
+                            width: 100%; height: 40px; border-radius: 5px;
+                            font-size: $font-size-s; color: $color-gray-dark;
+                            padding: 0 15px; margin-bottom: 10px;
+                        }
+                        #color_select {border: 1px solid $color-point;}
+                        #size_select {border: 1px solid $color-gray-light-lv2;}
+                    }
+                    .order_list {
+                        background-color: $color-gray-light-lv3;
+                        padding: 12px; margin-bottom: 10px; border-radius: 5px;
+                        position: relative;
+                        .info {
+                            padding-bottom: 10px;
+                            font-size: $font-size-s;
+                            .color {}
+                            .size {}
+                        }
+                        .close {padding: 10px; position: absolute; top: 0;right:0;}
+                        .num_price {
+                            @include flex-row; justify-content: space-between;
+                            .num {
+                                @include flex-row; justify-content: space-between;
+                                background-color: $color-white; display: inline-block; padding: 5px 10px;
+                                border: 1px solid $color-gray-light-lv2;
+                                border-radius: 5px;
+                            }
+                            #minus_btn {}
+                            #order_num {width:20px; text-align: center;}
+                            #plus_btn {}
+                        }
+                    }
+                    .order_price {
+                        @include flex-row; justify-content: space-between;
+                        h2 {font-size: $font-size-s;}
+                        .price {font-size: $font-size-l;
+                            em {font-weight: $font-weight-bold;}
+                        }
+                    }
+                }
+                .btn {
+                    @include flex-row; gap: 10px; width: 100%;
+                    .cart_btn {
+                        background-color: $color-white; color: $color-point;
+                        border: 1px solid $color-point;
+                        @include cart_buy_btn; width: 100%;
+                    }
+                    .buy_btn {
+                        background-color: $color-point; color: $color-white;
+                        @include cart_buy_btn; width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
