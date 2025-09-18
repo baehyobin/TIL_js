@@ -168,6 +168,7 @@
   border: 1px solid #bdbdbd;
   padding: 8px;
   background-color: #fff;
+  display: none;
 }
 #wrap main .container .contents .price_wrap .total_price .price {
   font-size: 2rem;

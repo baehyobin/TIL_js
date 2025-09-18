@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/9385/9385258.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/data.js" defer></script>
     <script src="./scripts/index.js" defer></script>
 </head>
 <body>
@@ -56,7 +57,7 @@
                             </button>
                         </div>
                     </div>
-                    <a href="#" class="review">
+                    <a href="#" class="review review_link">
                         <div class="score">
                             <svg class="star star1" width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.89888 4.63158L8.83521 0.81579C9.04494 0.535088 9.29401 0.328947 9.5824 0.197368C9.87079 0.0657895 10.1723 0 10.4869 0C10.8015 0 11.103 0.0657895 11.3914 0.197368C11.6798 0.328947 11.9288 0.535088 12.1386 0.81579L15.0749 4.63158L19.5318 6.13158C19.9863 6.27193 20.3446 6.5307 20.6067 6.90789C20.8689 7.28509 21 7.70175 21 8.1579C21 8.36842 20.9694 8.57895 20.9082 8.78947C20.8471 9 20.7466 9.20175 20.6067 9.39474L17.7228 13.5L17.8277 17.8158C17.8452 18.4298 17.6442 18.9474 17.2247 19.3684C16.8052 19.7895 16.3159 20 15.7566 20C15.7216 20 15.5293 19.9737 15.1798 19.9211L10.4869 18.6053L5.79401 19.9211C5.70662 19.9561 5.61049 19.9781 5.50562 19.9868C5.40075 19.9956 5.30462 20 5.21723 20C4.65793 20 4.16854 19.7895 3.74906 19.3684C3.32959 18.9474 3.12859 18.4298 3.14607 17.8158L3.25094 13.4737L0.393258 9.39474C0.253433 9.20175 0.152934 9 0.0917603 8.78947C0.0305868 8.57895 0 8.36842 0 8.1579C0 7.7193 0.126717 7.3114 0.38015 6.93421C0.633583 6.55702 0.987516 6.28947 1.44195 6.13158L5.89888 4.63158Z" />
@@ -106,9 +107,9 @@
                         <div class="product_opt">
                             <select name="color_select" id="color_select">
                                 <option value="none">색상</option>
-                                <option value="black">블랙(39,900원)</option>
+                                <!-- <option value="black">블랙(39,900원)</option>
                                 <option value="rasberry">라즈베리(39,900원)</option>
-                                <option value="almond" disabled>아몬드(39,000원)/품절</option>
+                                <option value="almond" disabled>아몬드(39,000원)/품절</option> -->
                             </select>
                             <select name="size_select" id="size_select">
                                 <option value="none">사이즈</option>
@@ -130,7 +131,7 @@
                                     <input type="number" name="order_num" id="order_num" value="1">
                                     <button type="button" id="plus_btn">+</button>
                                 </div>
-                                <p>39,900 원</p>
+                                <p>0 원</p>
                             </div>
                         </div>
                         <div class="order_price">
@@ -144,6 +145,18 @@
                     </div>
                 </div>
             </div>
+            <div class="sticky_menu" style="
+            background-color: #f5f5f5; padding: 20px;
+            display: flex; gap: 10px;
+            position:sticky; top:100px">
+                <a href="#" class="product_link">상품정보</a><!-- 상품정보 위치 이동 -->
+                <a href="#" class="review_link">리뷰</a><!-- 리뷰 위치 이동 -->
+                <a href="#">문의</a>
+                <a href="#">배송/환불</a>
+                <a href="#">추천</a>
+            </div>
+            <div class="product_info" style="height: 1000px; background-color: aqua;">상품정보</div>
+            <div class="review_wrap" style="height: 500px; background-color: pink;">고객리뷰</div>
         </main>
         <footer>footer</footer>
     </div>
