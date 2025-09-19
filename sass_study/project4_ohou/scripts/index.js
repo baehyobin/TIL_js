@@ -59,9 +59,9 @@ localStorage.setItem('isLogin','true');
 
 // 2. 😀저장하기 버튼 클릭 시 로그인 유무에 따라 다른결과 실행
 const bookMark = document.querySelector('.right_icon .scrap')
-console.log(bookMark)
-let loginStatus = localStorage.getItem('isLogin') ;
+let loginStatus = '' ;
 bookMark.addEventListener('click',()=>{
+    loginStatus = localStorage.getItem('isLogin')
     if(loginStatus == 'true'){
         //로그인시 wish.html이동
         location.href = './wish.html';
@@ -147,8 +147,7 @@ priceInfoIcon.addEventListener('click',()=>{
 const orderList = document.querySelector('.order_list')
 const sizeSelect = document.querySelector('#size_select')
 const colorSelect = document.querySelector('#color_select')
-const totalPrice = document.querySelector('.num_price p')
-const totalOrderPrice = document.querySelector('.order_price p em')
+const totalPrice = document.querySelector('.order_price p em')
 console.log (orderList,sizeSelect,colorSelect)
 
 orderList.style.display = 'none';
@@ -177,8 +176,8 @@ colorSelect.addEventListener('change',()=>{
                 let orderSizeReplace = orderSize.replace(/\(.*\)/, '')
                 orderList.children[0].children[1].textContent = orderSizeReplace;
                 // 7-2. 주문목록 출력(선택한 값이 출력, 주문금액 변경)
-                totalPrice.textContent = `${productOptDB[0].price.toLocaleString('ko-kr')}원`
-                totalOrderPrice.textContent = `${productOptDB[0].price.toLocaleString('ko-kr')}`
+                orderPrice.textContent = `${productOptDB[0].price.toLocaleString('ko-kr')}원`
+                totalPrice.textContent = `${productOptDB[0].price.toLocaleString('ko-kr')}`
             }
         })
     } else {
@@ -210,23 +209,77 @@ console.log(closeBtn)
 closeBtn.addEventListener('click',function(){
     this.parentNode.style.display = 'none';
     orderNum.value = '1';
+    orderPrice.textContent = '0';
     totalPrice.textContent = '0';
-    totalOrderPrice.textContent = '0';
     colorSelect.selectedIndex = colorSelect.options[0]
     sizeSelect.selectedIndex = sizeSelect.options[0]
 })
 
 // 9. 주문목록 + 클릭 시 재고수량까지 주문수량+주문금액 표시
+// +버튼  재고수량(producOptDB[0].stock)  주문수량  주문금액  증가숫자데이터
 const minusBtn = document.querySelector('#minus_btn')
 const plusBtn = document.querySelector('#plus_btn')
 const orderNum = document.querySelector('#order_num')
+const orderPrice = document.querySelector('.num_price p')
 let count = 1;
+//초기값
+orderNum.value = count;
+
+//총금액함수
+function productTotalFunc(){
+    let productPrice = productOptDB[0].price
+    let amountPrice = productPrice*count;
+    orderPrice.textContent = `${amountPrice.toLocaleString('ko-kr')}원`
+    totalPrice.textContent = `${amountPrice.toLocaleString('ko-kr')}`
+    return;
+}
 
 plusBtn.addEventListener('click',()=>{
     //수량증가
-    orderNum.value = ++count;
-    //주문금액
-    let amountPrice = productOptDB[0].price*orderNum.value;
-    totalPrice.textContent = `${amountPrice.toLocaleString('ko-kr')}원`
-    totalOrderPrice.textContent = `${amountPrice.toLocaleString('ko-kr')}`
+    if(count<productOptDB[0].stock){
+        count++;
+        orderNum.value = count;
+        //주문금액
+        productTotalFunc()
+    }else{
+        alert('최대 구매 수량입니다.')
+    }
 })
+// 10. 주문목록 - 클릭 시 주문수량+주문금액 감소(1이라면 경고창 출력) `1~9999개까지만 입력이 가능합니다.`
+minusBtn.addEventListener('click',()=>{
+    if(count>1){
+        //수량감소
+        count--;
+        orderNum.value = count;
+        //주문금액
+        productTotalFunc()
+    }else{
+        alert('1~9999개까지만 입력이 가능합니다.')
+    }
+})
+// 11. (상품 미선택 시) 장바구니, 바로구매 클릭 시 '상품을 선택하세요' 경고창 출력
+const cartBtn = document.querySelector('.cart_btn')
+const buyBtn = document.querySelector('.buy_btn')
+console.log(cartBtn, buyBtn)
+cartBtn.addEventListener('click',(cart)=>{
+    if(colorSelect.selectedIndex == 0 || sizeSelect.selectedIndex == 0){
+        alert('옵션 선택 후 버튼을 클릭해주세요')
+    }else{
+        loginChkFunc('./cart.html')
+    }
+}
+)
+// 12. 😀(상품 선택 시) 장바구니, 바로구매 클릭 시 로그인 유무에 따라 다른 페이지로 이동
+
+buyBtn.addEventListener('click',(buy)=>{
+    loginChkFunc('./buy.html')
+})
+
+function loginChkFunc(url){
+    loginStatus = localStorage.getItem('isLogin')
+    if(loginStatus == 'false') {
+        location.href = './login.html'
+    }else {
+        location.href = url
+    }
+}
