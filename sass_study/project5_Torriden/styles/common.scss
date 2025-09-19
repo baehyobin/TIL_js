@@ -1,0 +1,49 @@
+$font-size-xl:1.875rem; //30
+$font-size-l:1.438rem; //23
+$font-size-ml:1.25rem; //20
+$font-size-m:1.063rem; //17
+$font-size-s:0.875rem; //14
+$font-weight-extrabold:800;
+$font-weight-bold:700;
+$font-weight-medium:500;
+$color-black :#000 ;
+$color-white :#fff ;
+$color-gray-light :#6d7175 ;
+$color-gray-middle :#636363 ;
+$color-gray-dark :#434343 ;
+
+@mixin test-bg1{background-color: aquamarine;}
+@mixin test-bg2{background-color: coral;}
+@mixin test-bg3{background-color: pink;}
+@mixin contents-w{max-width: 1680px; min-width: 320px; margin: 0 auto;}
+@mixin thumbnail-s{width: 100px; height: 100px;}
+@mixin thumbnail-l{width: 860px; height: 860px;}
+@mixin icon24 {width: 24px; height: 24px; display: inline-block;}
+@mixin icon18 {width: 18px; height: 18px; display: inline-block;}
+@mixin arrow{
+    width: 48px; height: 48px; 
+    background-color: $color-white;
+    border-radius: 24px;
+    filter:drop-shadow(0 0 5px rgba(0,0,0,0.3))
+}
+@mixin img100Percent{width: 100%; height: auto;}
+@mixin flex-col{
+    display: flex; flex-flow: column nowrap;
+    justify-content: flex-start; align-items: flex-start;
+}
+@mixin flex-row{
+    display: flex; flex-flow: row nowrap;
+    justify-content: flex-start; align-items: flex-start;
+}
+@mixin dot-check{
+    background-image: url(../images/checkdot.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+@mixin dot-empty{
+    background-image: url(../images/emptydot.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+@mixin cart_buy_btn {
+    width: 100%; padding: 16px 28px; border-radius: 35px; text-align: center;}

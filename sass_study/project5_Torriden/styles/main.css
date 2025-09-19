@@ -1,0 +1,207 @@
+#wrap main {
+  background-color: aquamarine;
+}
+#wrap main .container {
+  background-color: coral;
+  max-width: 1680px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 50px 40px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#wrap main .container .overview_img .overview {
+  position: relative;
+  margin-bottom: 20px;
+}
+#wrap main .container .overview_img .overview .arrow {
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border-radius: 24px;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+  position: absolute;
+  display: none;
+}
+#wrap main .container .overview_img .overview .left_arrow {
+  top: 406px;
+  left: 16px;
+}
+#wrap main .container .overview_img .overview .right_arrow {
+  transform: scaleX(-1);
+  top: 406px;
+  right: 16px;
+}
+#wrap main .container .overview_img .overview .overview_pic {
+  width: 860px;
+  height: 860px;
+}
+#wrap main .container .overview_img .overview .overview_pic img {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+#wrap main .container .overview_img .thumbnails {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 8px;
+}
+#wrap main .container .overview_img .thumbnails a {
+  width: 100px;
+  height: 100px;
+}
+#wrap main .container .overview_img .thumbnails a * {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+}
+#wrap main .container .contents {
+  background-color: pink;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 36px;
+  width: 700px;
+}
+#wrap main .container .contents .product_info {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 6px;
+}
+#wrap main .container .contents .product_info h1 {
+  font-size: 1.875rem;
+  font-weight: 800;
+}
+#wrap main .container .contents .product_info h1 + p {
+  font-size: 1.063rem;
+  color: #636363;
+}
+#wrap main .container .contents .product_info .product_price {
+  font-size: 1.438rem;
+  font-weight: 700;
+}
+#wrap main .container .contents .product_info .product_price em {
+  font-size: 0.875rem;
+}
+#wrap main .container .contents .quantity p {
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+#wrap main .container .contents .quantity .quantity_btn {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 5px;
+  border-radius: 35px;
+  background-color: #000;
+}
+#wrap main .container .contents .quantity .quantity_btn #order_num {
+  background-color: #000;
+  color: #fff;
+  width: 20px;
+  text-align: center;
+  font: 1.25rem;
+}
+#wrap main .container .contents .purchase_option {
+  width: 100%;
+}
+#wrap main .container .contents .purchase_option .purchase_box {
+  background-color: aquamarine;
+  border: 1px solid #6d7175;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_onetime {
+  background-image: url(../images/checkdot.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-position: center left 16px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 16px;
+  border-bottom: 1px solid #6d7175;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_onetime label #purchase_onetime {
+  display: none;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_onetime label p {
+  transform: translate(23px, 0);
+  font-weight: 500;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_onetime .ones_price {
+  color: #6d7175;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_subscribe {
+  padding: 22px 16px;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_subscribe .subs_purchase_price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  color: #6d7175;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_subscribe ul {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_subscribe ul li {
+  background-image: url(../images/emptydot.png);
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_subscribe ul li label input {
+  display: none;
+}
+#wrap main .container .contents .purchase_option .purchase_box .purchase_subscribe ul li label p {
+  transform: translate(23px, 0);
+}
+#wrap main .container .contents .purchase_option .subs_policy a {
+  border-bottom: 1px solid #000;
+}
+#wrap main .container .contents .cart_wish_btn {
+  background-color: aquamarine;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+#wrap main .container .contents .cart_wish_btn .btn {
+  width: 100%;
+  padding: 16px 28px;
+  border-radius: 35px;
+  text-align: center;
+}
+#wrap main .container .contents .cart_wish_btn .cart_btn {
+  background-color: #000;
+  color: #fff;
+}
+
+/*# sourceMappingURL=main.css.map */
