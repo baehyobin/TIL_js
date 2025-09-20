@@ -45,5 +45,10 @@ $color-gray-dark :#434343 ;
     background-repeat: no-repeat;
     background-position: center left;
 }
+@mixin more-icon{
+    background-image: url(../images/arrow_down.png);
+    background-repeat: no-repeat;
+    background-position: center right;
+}
 @mixin cart_buy_btn {
-    width: 100%; padding: 16px 28px; border-radius: 35px; text-align: center;}
+    width: 100%; padding: 28px 16px; border-radius: 35px; text-align: center;}

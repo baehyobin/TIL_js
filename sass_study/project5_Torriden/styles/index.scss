@@ -98,9 +98,23 @@
                         @include cart_buy_btn;
                     }
                     .cart_btn {background-color: $color-black; color: $color-white;}
-                    .wish_btn {}
+                    .wish_btn {
+                        img {
+                            display: inline-block;
+                            translate: -5px 4px;
+                        }
+                    }
                 }
-                .info_list {}
+                .info_list {
+                    .summary {
+                        .info_btn {
+                            width: 100%; text-align: start;
+                            font-size: $font-size-ml; padding: 16px 0;
+                            border-top: 1px solid $color-gray-middle;
+                        }
+                        .contents_info {}
+                    }
+                }
             }
         }
     }

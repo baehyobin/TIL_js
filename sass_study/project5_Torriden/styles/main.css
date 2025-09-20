@@ -195,13 +195,24 @@
 }
 #wrap main .container .contents .cart_wish_btn .btn {
   width: 100%;
-  padding: 16px 28px;
+  padding: 28px 16px;
   border-radius: 35px;
   text-align: center;
 }
 #wrap main .container .contents .cart_wish_btn .cart_btn {
   background-color: #000;
   color: #fff;
+}
+#wrap main .container .contents .cart_wish_btn .wish_btn img {
+  display: inline-block;
+  translate: -5px 4px;
+}
+#wrap main .container .contents .info_list .summary .info_btn {
+  width: 100%;
+  text-align: start;
+  font-size: 1.25rem;
+  padding: 16px 0;
+  border-top: 1px solid #636363;
 }
 
 /*# sourceMappingURL=main.css.map */
