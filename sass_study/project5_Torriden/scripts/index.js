@@ -32,4 +32,4 @@ thumbnailImg[5].addEventListener('click',imgChangeFunc('5'))
 
 function imgChangeFunc(num){
     return function (){overviewImg.src=thumbnailImg[num].children[0].src;
-}}
+}
