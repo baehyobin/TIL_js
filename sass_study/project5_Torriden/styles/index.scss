@@ -2,9 +2,9 @@
 
 #wrap {
     main {
-        @include test-bg1;
+        //test-bg1;
         .container {
-            @include test-bg2;
+            //test-bg2;
             @include contents-w; padding: 50px 40px;
             @include flex-row; justify-content: space-between;
             .overview_img {
@@ -30,7 +30,7 @@
                 }
             }
             .contents {
-                @include test-bg3;
+                //test-bg3;
                 @include flex-col; gap: 36px; width: 700px; 
                 .product_info {
                     @include flex-col; gap: 6px;
@@ -55,7 +55,7 @@
                 .purchase_option {
                     width: 100%;
                     .purchase_box {
-                        @include test-bg1;
+                        //test-bg1;
                         border: 1px solid $color-gray-light; border-radius: 20px; width: 100%;
                         margin-bottom: 10px;
                         .purchase_onetime {
@@ -91,7 +91,7 @@
                     }
                 }
                 .cart_wish_btn {
-                    @include test-bg1;
+                    //test-bg1;
                     @include flex-col; justify-content : center; align-items: center; gap: 10px;
                     width: 100%;
                     .btn {
@@ -106,13 +106,23 @@
                     }
                 }
                 .info_list {
+                    width: 100%;
                     .summary {
                         .info_btn {
-                            width: 100%; text-align: start;
-                            font-size: $font-size-ml; padding: 16px 0;
+                            width: 100%;
                             border-top: 1px solid $color-gray-middle;
+                            @include flex-row; justify-content: space-between; align-items: center;
+                            font-size: $font-size-ml; padding: 16px 0;
                         }
-                        .contents_info {}
+                        .contents_info {
+                            display: none; //초기숨기기
+                            //test-bg1;
+                            * {line-height:150%;}
+                            padding-bottom: 26px;
+                            strong {
+                                font-weight: $font-weight-bold;
+                            }
+                        } 
                     }
                 }
             }

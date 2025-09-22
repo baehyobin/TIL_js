@@ -6,6 +6,7 @@ $font-size-s:0.875rem; //14
 $font-weight-extrabold:800;
 $font-weight-bold:700;
 $font-weight-medium:500;
+$font-line150:1.5;
 $color-black :#000 ;
 $color-white :#fff ;
 $color-gray-light :#6d7175 ;
@@ -49,6 +50,7 @@ $color-gray-dark :#434343 ;
     background-image: url(../images/arrow_down.png);
     background-repeat: no-repeat;
     background-position: center right;
+    background-size: 18px 18px;
 }
 @mixin cart_buy_btn {
     width: 100%; padding: 28px 16px; border-radius: 35px; text-align: center;}

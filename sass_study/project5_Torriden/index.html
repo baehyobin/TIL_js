@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/3522/3522666.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/main.css">
-    <script src="./scripts/index.js"></script>
+    <script src="./scripts/index.js" defer></script>
 </head>
 <body>
     <div id="wrap">
@@ -19,7 +19,7 @@
                 <div class="overview_img">
                     <div class="overview">
                         <button type="button" class="arrow left_arrow"><img src="./images/arrow_left.png" alt="go left thumnail"></button>
-                        <p class="overview_pic"><img src="./images/thumbnail001.jpg" alt=""></p>
+                        <p class="overview_pic"><img src="./images/thumbnail001.jpg" alt="overview image"></p>
                         <button type="button" class="arrow right_arrow"><img src="./images/arrow_left.png" alt="go right thumnail"></button>
                     </div>
                     <div class="thumbnails">
@@ -80,12 +80,18 @@
                     </div>
                     <div class="info_list">
                         <div class="summary">
-                            <button type="button" class="info_btn summary">SUMMARY</button>
-                            <div class="summary_info">
+                            <button type="button" class="info_btn summary">
+                                <span>SUMMARY</span>
+                                <p><img src="./images/arrow_down.png" alt="더보기"></p>
+                            </button>
+                            <div class="contents_info summary_info">
                                 <p>A moisture cleansing oil with 8D multi low-molecular hyaluronic acid melts away makeup, pore cloggers and hydrates without leaving an oily residue.</p>
                             </div>
-                            <button type="button" class="info_btn benefits">BENEFITS</button>
-                            <div class="benefits_info">
+                            <button type="button" class="info_btn benefits">
+                                <span>BENEFITS</span>
+                                <p><img src="./images/arrow_down.png" alt="더보기">
+                            </button>
+                            <div class="contents_info benefits_info">
                                 <strong>Key Features:</strong>
                                 <p>
                                     ✔ Hydration: Leaves skin feeling deeply hydrated and refreshed after cleansing <br>
