@@ -1,1 +1,20 @@
 @use './common.scss' as *;
+@media screen and (max-width:1000px){
+#wrap{
+    main {
+        .container {
+            @include flex-col; gap: 20px;
+            padding: 30px 15px;
+            .overview_img {
+                .overview {
+                    .overview_pic {
+                        @include thumbnail-m;
+                        .img {
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}

@@ -20,8 +20,12 @@
 
 // 1. 썸네일 클릭시 큰 상품 이미지 변경
 const overviewImg = document.querySelector('.overview_pic img')
+const overview = document.querySelector('.overview_pic')
 const thumbnailImg = document.querySelectorAll('.thumbnails a')
-console.log(overviewImg, thumbnailImg)
+const thumbnailBar = document.querySelectorAll('a .bar')
+console.log(overviewImg, thumbnailImg, thumbnailBar)
+
+imgChangeFunc('0')
 
 thumbnailImg[0].addEventListener('click',imgChangeFunc('0'))
 thumbnailImg[1].addEventListener('click',imgChangeFunc('1'))
@@ -31,5 +35,33 @@ thumbnailImg[4].addEventListener('click',imgChangeFunc('4'))
 thumbnailImg[5].addEventListener('click',imgChangeFunc('5'))
 
 function imgChangeFunc(num){
-    return function (){overviewImg.src=thumbnailImg[num].children[0].src;
+    return function (e){
+        e.preventDefault();
+        overviewImg.src=thumbnailImg[num].children[0].src;
+        resetBar()
+        thumbnailBar[num].style.display = 'block';
+        thumbnailBar[num].style.transform = 'scaleX(1)';
+    }
 }
+// 2. 썸네일 클릭시 언더바 이동(+애니메이션)
+function resetBar(){
+    thumbnailBar[0].style.transform = 'scaleX(0)';
+    thumbnailBar[1].style.transform = 'scaleX(0)';
+    thumbnailBar[2].style.transform = 'scaleX(0)';
+    thumbnailBar[3].style.transform = 'scaleX(0)';
+    thumbnailBar[4].style.transform = 'scaleX(0)';
+    thumbnailBar[5].style.transform = 'scaleX(0)';
+}
+
+// 3. 큰 상품 이미지에 마우스 올릴시 좌우버튼 나오기(+애니메이션)
+// CSS로 처리함!
+
+// 4. 좌우버튼 마우스 클릭시 상품 이미지 좌우변경
+const arrowLeft = document.querySelector('.overview .left_arrow')
+const arrowRight = document.querySelector('.overview .right_arrow')
+console.log(arrowLeft, arrowRight)
+arrowRight.addEventListener('click',()=>{
+    imgChangeFunc(`0`)
+    let count = 0;
+    imgChangeFunc(`++${count}`)
+})

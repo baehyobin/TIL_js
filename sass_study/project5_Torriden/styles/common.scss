@@ -18,6 +18,7 @@ $color-gray-dark :#434343 ;
 @mixin test-bg3{background-color: pink;}
 @mixin contents-w{max-width: 1680px; min-width: 320px; margin: 0 auto;}
 @mixin thumbnail-s{width: 100px; height: 100px;}
+@mixin thumbnail-m{width: 500px; height: 500px;}
 @mixin thumbnail-l{width: 860px; height: 860px;}
 @mixin icon24 {width: 24px; height: 24px; display: inline-block;}
 @mixin icon18 {width: 18px; height: 18px; display: inline-block;}
