@@ -106,7 +106,13 @@
                     .btn {
                         @include cart_buy_btn;
                     }
-                    .cart_btn {background-color: $color-black; color: $color-white;}
+                    .cart_btn {
+                        &::after {
+                            content:'Add to cart';
+                            display: block;
+                        }
+                        background-color: $color-black; color: $color-white;
+                    }
                     .wish_btn {
                         img {
                             display: inline-block;

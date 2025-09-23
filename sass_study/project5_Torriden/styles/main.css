@@ -212,6 +212,10 @@
   border-radius: 35px;
   text-align: center;
 }
+#wrap main .container .contents .cart_wish_btn .cart_btn::after {
+  content: "Add to cart";
+  display: block;
+}
 #wrap main .container .contents .cart_wish_btn .cart_btn {
   background-color: #000;
   color: #fff;
