@@ -1,0 +1,108 @@
+<!-- scroll_horizontal2.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Wedgewood | 가로스크롤 트리거 활용</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <style>
+        * {font-family: 'Noto Serif KR', serif !important;}
+        body {overflow-x: hidden;}
+        body header {position: fixed; height: max-content; width: 100%; background-color: aliceblue; padding: 20px 0;}
+        body main {}
+        body main .box {background-color: skyblue; height: 100vh;}
+        body main .title {
+            display: flex; flex-flow: column nowrap; gap: 50px;
+            justify-content: center; align-items: center;
+            color: white;
+        }
+        body main .title h1 {font-size: 3rem; font-weight: 600; text-shadow: 0 0 4px rgba(0,0,0,0.3);}
+        body main .title p {line-height: 1.8; text-align: center;text-shadow: 0 0 4px rgba(0,0,0,0.3);}
+        
+        body main .wedgewood {position: relative;}
+        body main .wedgewood h1 {
+            position: absolute;
+            top: 50px; left: 50px;
+            font-size: 3rem; color: skyblue;text-shadow: 0 0 4px rgba(0,0,0,0.4); z-index: 999;
+        }
+        body main .wedgewood {height: 100vh;}
+        body main .wedgewood .container {display: flex; width: max-content;}
+        body main .wedgewood .container .imgbox {
+            position: relative;
+            width: 100vw; height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        body main .wedgewood .container .imgbox1 {background-image: url(../images/Queensware.jpg);}
+        body main .wedgewood .container .imgbox2 {background-image: url(../images/Renaissance_Gold.jpg);}
+        body main .wedgewood .container .imgbox3 {background-image: url(../images/Verawang.jpg);}
+        body main .wedgewood .container .imgbox p {
+            color: white; font-size: 3rem;text-shadow: 0 0 4px rgba(0,0,0,0.8);
+            position: absolute;
+            right:150px; bottom: 150px;
+        }
+        body main .video  {width: 100vw;}
+        body main .video .youtube_ww {display: flex; align-items: center; justify-content: center; height: 100vh;}
+        
+    </style>
+</head>
+<body>
+    <header><img src="../images/WWlogo.png" alt="웨지우드 로고"></header>
+    <main>
+        <div class="box title">
+            <h1>Welcome to Wedgwood</h1>
+            <p>
+                웨지우드의 티 파티에 오신 것을 환영합니다. <br>
+                우리는 대담하고, 특별하고, 인생을 즐겁게 하는 모든 예술적인 것들을 사랑합니다. <br>
+                웨지우드와 함께 혼자만의 시간을, 혹은 소중한 사람과의 티 타임을 진정으로 즐겨보세요. <br>
+            </p>
+        </div>
+        <section class="wedgewood">
+            <h1>Collection</h1>
+            <div class="container">
+                <div class="imgbox imgbox1"><p>Queensware</p></div>
+                <div class="imgbox imgbox2"><p>Renaissance Gold</p></div>
+                <div class="imgbox imgbox3"><p>Vera Wang</p></div>
+            </div>
+        </section>
+        <div class="box video">
+            <div class="youtube_ww">
+                <iframe width="1200" height="700" src="https://www.youtube.com/embed/WWImzyqPmxc?autoplay=1&mute=1$loop=1" title="DINE WITH THE GODS: WEDGWOOD BACCHUS TABLEWARE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        </main>
+    
+    <script>
+        gsap.registerPlugin(ScrollTrigger) // ★scrollTrigger CDN 필수
+        const container=document.querySelector('.container')
+        const scrollW = container.offsetWidth - window.innerWidth;
+        console.log(container.offsetWidth, scrollW)
+
+        gsap.utils.toArray('.wedgewood').forEach((obj)=>{
+            console.log(obj)
+            const wedge =gsap.timeline({
+                scrollTrigger:{
+                    trigger:obj,
+                    start:'center center',
+                    end:()=> "+=" + scrollW,
+                    scrub: true,
+                    pin: true,
+                    anicipatePin:1,
+                },default:{ease:'linear'}
+            })
+            wedge.fromTo(obj.querySelector('.container'),{
+                x:0,
+            },{
+                x:-scrollW,
+            })
+        })
+    </script>
+</body>
+</html>
